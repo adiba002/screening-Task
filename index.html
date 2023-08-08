@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screening Task</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #boxes {
+            border: 1px solid rgb(243, 238, 238);
+            width: 30%;
+            margin-left: 35%;
+            margin-right: 35%;
+            background-color: rgb(243, 238, 238);
+        }
+        /*add lines before and after the heading*/
+        .hr-lines{
+            position: relative;
+            margin: 20px auto;
+            text-align: center;
+            color: teal;
+            font-size: x-large;
+            width:100%;
+        }
+        .hr-lines::before {
+            content: ' ';
+            height: 2px;
+            width: 35%;
+            background: rgb(4, 103, 121);
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+        .hr-lines::after {
+            content: ' ';
+            height: 2px;
+            width: 35%;
+            background: rgb(4, 103, 121);
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+        }
+        #top, #middle, #bottom {
+            border: 1px solid rgb(72, 184, 72);
+            margin-top: 15px; 
+            border-radius: 10px;           
+        }
+        .top1, .middle1, .bottom1 {
+            float: left;
+            padding: 10px;   
+        }
+        #top::after, #middle::after, #bottom::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        #size-color{
+            margin-left: 80px;
+            width: 55%;
+        }
+        .size,.color{
+            float: left;
+            padding: 5px;
+        }
+        #show{
+            margin-left: 80px;
+            width: 50%;
+        }
+        .size1,.color1{
+            float: left;
+            padding: 5px;
+        }
+        #show3{
+            margin-left: 80px;
+            width: 50%;
+        }
+        .size3,.color3{
+            float: left;
+            padding: 5px;
+        }
+        
+        .bg_change {
+            background-color: lightgreen;
+        }
+
+     /* Use a media query to add a break point at 768px: */
+@media screen and (max-width: 768px) {
+  #show, #size-color, #show3{
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}   
+ 
+    </style>
+</head>
+<body>
+    <div id="boxes">
+        <h3 class="hr-lines">Bundle & Save</h3>
+
+    <div id="top"  class="bgchange">
+        <div id="radio1" class="top1" style="width: 20px;">
+            <input type="radio" id="pair1" name="bill" onclick="box1()">
+        </div>
+        <div id="label1" class="top1" style="width: 250px;">
+            <label for="pair1">1 Pair <br><label id="val1"> DKK 195.00</label></label>             
+        </div>
+        <div id="off1" class="top1" style="width: 100px;"><br>
+            <label for="pair1" style="float: right;">50% OFF</label>
+        </div>
+    
+        <div id="show" hidden>
+            <div class="size1">
+                <label for="size">Size</label><br>
+                <label for="#1">#1</label>
+                <select name="size" id="size" style="width: 80px; height: 25px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select> <br>
+                <label for="#2">#2</label>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+            </div>
+
+            <div class="color1">
+                <label for="colour">Colour</label><br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 1px;">
+                    <option value="colour1">Colour</option>
+                    <option value="colour2">Colour</option>
+                    <option value="colour3">Colour</option>
+                </select> <br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">Colour</option>
+                    <option value="M">Colour</option>
+                    <option value="L">Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="middle"  class="bgchange" >
+        <div id="radio2" class="middle1" style="width: 20px;">
+            <input type="radio" id="pair2" name="bill" onclick="box2()">
+        </div>
+        <div id="label2" class="middle1" style="width: 250px;">
+            <label for="pair2">2 Pair <br> <label id="val2">345.00</label></label>
+            <del style="margin-left: 20px;">DKK 195.00</del>
+        </div>
+        <div id="off2" class="middle1" style="width: 110px;" >
+            <label for="pair2" style="color: teal; float: right;">Most Popular <br><label style="color: black;">40% OFF</label></label>
+        </div>
+        <div id="size-color" hidden>
+            <div class="size">
+                <label for="size">Size</label><br>
+                <label for="#1">#1</label>
+                <select name="size" id="size" style="width: 80px; height: 25px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select> <br>
+                <label for="#2">#2</label>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+            </div>
+
+            <div class="color">
+                <label for="colour">Colour</label><br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 1px;">
+                    <option value="colour1">Colour</option>
+                    <option value="colour2">Colour</option>
+                    <option value="colour3">Colour</option>
+                </select> <br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">Colour</option>
+                    <option value="M">Colour</option>
+                    <option value="L">Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+   
+    <div id="bottom"  class="bgchange">
+        <div class="bottom1" style="width: 20px;">
+            <input type="radio" name="bill" onclick="box3()">
+        </div>
+        <div class="bottom1" style="width: 250px;">
+            <label for="3pair">3 Pair <br><label id="val3">528.00</label></label>
+        </div>
+        <div class="bottom1" id="off3" style="width: 100px; text-align: center;"><br>
+            <label for="off3">60% OFF</label>
+        </div>
+        <div id="show3" hidden>
+            <div class="size3">
+                <label for="size">Size</label><br>
+                <label for="#1">#1</label>
+                <select name="size" id="size" style="width: 80px; height: 25px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select> <br>
+                <label for="#2">#2</label>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                </select>
+            </div>
+
+            <div class="color3">
+                <label for="colour">Colour</label><br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 1px;">
+                    <option value="colour1">Colour</option>
+                    <option value="colour2">Colour</option>
+                    <option value="colour3">Colour</option>
+                </select> <br>
+                <select name="size" id="size" style="width: 80px; height: 25px; margin-top: 5px;">
+                    <option value="S">Colour</option>
+                    <option value="M">Colour</option>
+                    <option value="L">Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="shipping" style="padding: 20px;">
+        <label style="color: rgb(24, 128, 192);">Free 2 Day Shipping</label>
+        <label style="float: right;">Total: <label id="total">360.00</label></label>
+    </div>
+
+    <button style="width: 100%; padding: 3px; background-color:rgb(31, 165, 165); cursor: pointer;">
+        <h2 style="color: aliceblue;">+ Add to Cart</h2>
+    </button>
+
+    <label style="float: right;">Powered by Pumper</label>
+    </div>
+
+<script>
+   var changes = document.querySelectorAll(".bgchange");
+   
+   for(change in changes) {
+    changes[change].onclick = function() {
+        changes.forEach(function(chg) {
+            chg.classList.remove('bg_change');
+        })
+        this.classList.add('bg_change');
+    }
+   }
+
+   //hide/show box1
+function box1() {
+    let s = document.getElementById('show');
+    if(s.style.display === 'block') {
+        s.style.display = 'none';
+        
+    }
+    else {
+        s.style.display = 'block';
+        let s1 = document.getElementById('val1').innerHTML;
+        document.getElementById('total').innerHTML = s1;
+        
+    }
+    
+}
+
+//hide/show  box3
+function box3() {
+    let s = document.getElementById("show3");
+    if(s.style.display === 'block') {
+        s.style.display = 'none';
+        
+
+    }
+    else {
+        s.style.display = 'block';
+        let s1 = document.getElementById('val3').innerHTML;
+        document.getElementById('total').innerHTML = s1;
+       
+    }
+}
+
+//hide/show box2
+function box2() {
+    let s = document.getElementById('size-color');
+    if(s.style.display === 'block') {
+        s.style.display = 'none';
+        
+
+    }
+    else {
+        s.style.display = 'block';
+        let s1 = document.getElementById('val2').innerHTML;
+        document.getElementById('total').innerHTML = s1;
+       
+    }
+}
+</script>
+</body>
+</html>
